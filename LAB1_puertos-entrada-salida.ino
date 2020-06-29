@@ -1,3 +1,9 @@
+/*
+*LABORATORIO 1: Diseño de un sistema de conteo de personas que usan el servicio de bus en la cooperativa 28
+*Nombre: Irma Túquerres
+*Semestre: 7mo 
+*
+*/
 int decenas,unidades;
 int entrada=10;
 int salida=9;
