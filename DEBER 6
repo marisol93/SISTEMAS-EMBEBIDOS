@@ -1,0 +1,78 @@
+/////////////MAESTRO//7
+/*
+ * DEBER 6
+ * Realizar un programa donde el sistema máster tenga 4 switchs, al activarlos, envíe un mensaje por comunicación i2c al esclavo y encienda un led por cada switch.v
+ */
+#include<Wire.h>//libreriai2c
+ char dato;//variable de almacenamiento de datos
+void setup() {
+  Wire.begin();//inicia cx i2c
+  Serial.begin(9600);//inicia cx serial
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  if(Serial.available()>0){//verifica el puerto de cx
+    dato=Serial.read();
+    switch(dato) {
+      case (0):'1'
+        Wire.beginTransmission(4);
+        Wire.write(dato);
+        Wire.endTransmission();
+      break;
+      case (1):'2'
+        Wire.beginTransmission(4);
+        Wire.write(dato);
+        Wire.endTransmission();
+      break;
+  }
+  // put your main code here, to run repeatedly:
+
+}
+}
+/*///////esclavo////////////
+ * DEBER 6
+ * NOMBRE: IRMA TÚQUERRES
+ * Realizar un programa donde el sistema máster tenga 4 switchs, al activarlos, envíe un mensaje por comunicación i2c al esclavo y encienda un led por cada switch. 
+ */
+ #include<Wire.h>//libreria isc
+ int led1=7;
+ int led2=6;
+ int led3=5;
+ int led4=4;
+ char dato;
+void setup() {
+  Wire.begin(4);
+  Wire.onReceive(receiveEvent);// 
+  Serial.begin(9600);
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  
+  // put your main code here, to run repeatedly:
+
+}
+void receiveEvent (int bytes){
+  if(Wire.available()>0){
+    dato=Wire.read();
+    switch(9)
+      case (0):'1'
+        pinMode(led1,HIGH);
+        pinMode(led2,LOW);
+        pinMode(led3,LOW);
+        pinMode(led4,LOW); 
+      break;
+      case (1):'2'
+        pinMode(led1,HIGH);
+        pinMode(led2,LOW);
+        pinMode(led3,LOW);
+        pinMode(led4,LOW); 
+      break;
+    
+ }
+   
+}
+
