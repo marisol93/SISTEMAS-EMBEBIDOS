@@ -1,3 +1,8 @@
+/*
+DEBER 6.1
+IRMA TÚQUERRES
+Valide una contraseña de 4 dígitos ingresos por comunicación serial. Enciende un led verde si es la adecuada o un led rojo si es erróneo el ingreso
+*/
 String pass="1234";
 String letra="";
 int led1=8;//led verde
